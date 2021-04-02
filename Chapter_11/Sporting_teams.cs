@@ -3,28 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Chapter_11.MatchOutcome;
 
 namespace Chapter_11
 {
     public abstract class Sporting_teams 
     {
-        //private string primary_coach;
-        //private string sport_type;
+        protected List<MatchOutcome> matchOutcomes = new List<MatchOutcome>();
 
-        //public Sporting_teams()
-        //{
-
-        //}
-
-        //public Sporting_teams(
-        //    string primary_coach,
-        //    string sport_type,
-        //    double accountBalance)
-        //{
-        //    this.primary_coach = primary_coach;
-        //    this.sport_type = sport_type;
-        //    this.AccountBalance = accountBalance;
-        //}
+        public List<MatchOutcome> MatchOutcomes { get { return this.matchOutcomes; } }
 
         public string Sport_Category { get; set; }
         public string Coach { get; set; }
@@ -38,6 +25,16 @@ namespace Chapter_11
         public virtual int GetTeamParticipants()
         {
             return 10;
+        }
+
+        public virtual void RecordMatchOutcome(MatchOutcomes matchWin)
+        {
+            this.RecordMatchOutcome(matchWin, 0);
+        }
+
+        protected virtual void RecordMatchOutcome(MatchOutcomes matchWin, double rewardPenalty)
+        {
+            matchOutcomes.Add(new MatchOutcome() { MatchResult = matchWin, RewardPenalty = rewardPenalty });
         }
 
         public double AccountBalance { get; set; }

@@ -13,6 +13,11 @@ namespace Chapter_11
             double some = 12.3;           
         }
 
+
+        /// <summary>
+        /// This adds a reward amount to the teams' account balance.
+        /// </summary>
+        /// <param name="amount"></param>
         public void AddAmountToBudget(double amount)
         {
             this.AccountBalance += amount;
