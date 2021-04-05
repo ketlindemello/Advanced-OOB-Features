@@ -51,7 +51,6 @@ Cooley
 Wright
 Mueller
 Kerr
-Ali
 Zhang
 Young
 Esparza
@@ -77,19 +76,16 @@ Baird
 Bush
 Walton
 Moon
-Kim
 Myers
 Browning
 Randall
 Greene
-Yu
 Frank
 Moss
 Serrano
 Rojas
 Gibson
 Lloyd
-Ho
 Foster
 Lester
 Hughes

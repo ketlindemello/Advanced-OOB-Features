@@ -18,8 +18,6 @@ namespace Chapter_11
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
-            Tennis tennis = new Tennis();
-            
         }
     }
 }

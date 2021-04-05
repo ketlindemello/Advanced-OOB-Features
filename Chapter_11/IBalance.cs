@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Chapter_11
 {
-    public interface IBudgeting
+    public interface IBalance
     {
         double GetAccountBalance();
-        double DeductAmount(double amount);
-        void AddAmountToBudget(double amount);
+        //double DeductAmount(double amount);
+        //void AddAmountToBudget(double amount);
     }
 }

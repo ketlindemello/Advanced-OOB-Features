@@ -7,19 +7,15 @@ using static Chapter_11.MatchOutcome;
 
 namespace Chapter_11
 {
-    public class Tennis : Sporting_teams, IBudgeting
+    public class Tennis : SportingTeams, IBalance
     {
-        protected const int _teamSize = 2;
         const double winReward = 50;
         const double lossPenalty = 25;
 
         //Auto-property
         public string RacketRestringerName { get; set; }
 
-        public override int GetTeamParticipants()
-        {
-            return _teamSize;
-        }
+        
 
         public override void RecordMatchOutcome(MatchOutcomes matchWin)
         {
@@ -50,7 +46,7 @@ namespace Chapter_11
             //Some say StringBuilder is better than string concatenation
             StringBuilder retval = new StringBuilder("Team Name:").Append('\t').Append(this.Name);
             retval.Append(Environment.NewLine);     // /r/n --> windows \n --> *nix
-            retval.Append("Sport Category:").Append('\t').Append(this.Sport_Category);
+            retval.Append("Sport Category:").Append('\t').Append(this.SportCategory);
             retval.Append(Environment.NewLine);
             retval.Append("Sport Type:").Append('\t').Append(nameof(Tennis));
             retval.Append(Environment.NewLine);
@@ -58,7 +54,7 @@ namespace Chapter_11
             retval.Append(Environment.NewLine);
             retval.Append("Racket Restringer:").Append('\t').Append(this.RacketRestringerName);
             retval.Append(Environment.NewLine);
-            retval.Append("Account Balance:").Append('\t').Append(GetAccountBalance());
+            retval.Append("Points Balance:").Append('\t').Append(GetAccountBalance());
             retval.Append(Environment.NewLine);
             retval.Append("Win/Loss Ratio:").Append('\t').Append(GetWinLossRatio());
             retval.Append(Environment.NewLine);
@@ -75,13 +71,13 @@ namespace Chapter_11
             if (matchOutcomes.Count > 2)
             {
                 //TODO: Fix this for where there are no losses to prevent divide by zero exception
-                return matchOutcomes.Count(x => x.MatchResult.Equals(MatchOutcome.MatchOutcomes.Win)) /
-                    matchOutcomes.Count(x => x.MatchResult.Equals(MatchOutcome.MatchOutcomes.Loss));
+                return (double)((double)matchOutcomes.Count(x => x.MatchResult.Equals(MatchOutcome.MatchOutcomes.Win)) /
+                    ((double)matchOutcomes.Count(x => x.MatchResult.Equals(MatchOutcome.MatchOutcomes.Loss))));
             }
             return 0;
         }
 
-        public double DeductAmount(double amount)
+        /*public double DeductAmount(double amount)
         {
             throw new NotImplementedException();
         }
@@ -89,6 +85,6 @@ namespace Chapter_11
         public void AddAmountToBudget(double amount)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }
