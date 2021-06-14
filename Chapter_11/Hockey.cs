@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using static Chapter_11.MatchOutcome;
 
+/* This code implements a hockey class.
+ */
 namespace Chapter_11
 {
     public class Hockey : SportingTeams, IBalance
