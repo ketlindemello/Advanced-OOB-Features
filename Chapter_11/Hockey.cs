@@ -79,7 +79,7 @@ namespace Chapter_11
         {
             if (matchOutcomes.Count > 2)
             {
-                //TODO: Fix this for where there are no losses to prevent divide by zero exception
+                //TODO: x => lamba
                 return (double)((double)matchOutcomes.Count(x => x.MatchResult.Equals(MatchOutcome.MatchOutcomes.Win)) /
                     ((double)matchOutcomes.Count(x => x.MatchResult.Equals(MatchOutcome.MatchOutcomes.Loss))));
             }
