@@ -1,4 +1,4 @@
-# Advanced-OOB-Features
+# Advanced-OOP-Features
 
 # Chapter 11
 Create a base class to hold information about sporting teams on campus. It should not be possible to instantiate the class.
